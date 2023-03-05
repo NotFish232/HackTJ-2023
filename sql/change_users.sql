@@ -10,7 +10,7 @@ DECLARE nextId INT;
 
 SELECT COUNT(1) INTO nextId FROM users;
 INSERT INTO users
-VALUE (nextId, cur_username, cur_email, cur_password, 0);
+VALUE (nextId, cur_username, cur_email, cur_password, 3000, 100, 0, 1, 0, -1);
 
 INSERT INTO avatars
 VALUE (nextId, "#ffffff", "#ffffff", "#ffffff", "#ffffff", "none");
