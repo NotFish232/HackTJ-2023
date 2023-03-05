@@ -1,0 +1,106 @@
+/*html { 
+    background: url(/img/path_background.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
+body{
+    background: #47607D;
+}
+#welcome{
+    grid-row: 2/3;
+    grid-column: 11/23;
+}
+#welcome h1{
+    font-weight: bolder;
+    color: #D2E8F5;
+}
+#signup-box{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    grid-row: 4/16;
+    grid-column: 11/23;
+    background: #76A493;
+    border: 4vh solid #68E1B4;
+    border-radius: 8px;
+}
+#signup-box form{
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    height: 35vh;
+}
+input{
+    font-size: 2.5vh;
+}
+input,
+input::-webkit-input-placeholder {
+    font-size: 2.5vh;
+}
+/*#username{
+    grid-row: 1/4;
+}
+#email{
+    grid-row: 4/7;
+}
+#password{
+    grid-row: 7/10;
+}
+#submit{
+    grid-row: 10/13;
+}*/
+#username{
+    grid-row: 1/5;
+}
+#password{
+    grid-row: 5/9;
+}
+#submit{
+    grid-row: 9/13;
+}
+#login_email{
+    grid-row: 1/5;
+}
+#login_password{
+    grid-row: 5/9;
+}
+#login_submit{
+    grid-row: 9/13;
+}
+#message{
+    grid-row: 16/17;
+    grid-column: 12/22;
+    color: #D2E8F5;
+}
+#message-inner:hover{
+    text-decoration: underline;
+    color: blue;
+}
+form{
+    margin-left: 10%;
+}
+form p{
+    font-weight: bold;
+    font-size: 30vw;
+}
+form input{
+    padding-left: 10px;
+    background: #47607D;
+    border: 3px solid #2C394A;
+}
+form input::placeholder{
+    color: #D2E8F5;
+}
+form button{
+    background: #68E1B4;
+    margin-top: 100px;
+}
+.oval{
+    width: 85%;
+    line-height: 30px;
+    font-size: 2.5vh;
+    margin: 10px 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 20px;
+}

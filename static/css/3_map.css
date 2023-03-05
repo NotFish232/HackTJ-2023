@@ -1,0 +1,195 @@
+html { 
+    background: url(/img/Map_Basemap.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.background
+{
+  background-image: url('/img/Map_Basemap.png');
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*.house1
+{
+  text-align: center;
+  display: block;
+  position: absolute;
+  margin-left: 30%;  
+  margin-top: 20%;
+  
+  height: 7vh;
+  width: 8vw;
+  background-color: #000;
+}
+*/
+.house1
+{
+  position: absolute;
+  top:76%;
+  left: 5%;
+  display: block;
+  padding: 5px;
+  height: 90px;
+  width: 110px;
+}
+
+.apartment
+{
+  position: absolute;
+  top:74%;
+  left:16%;
+  display: block;
+  padding: 5px;
+  height: 95px;
+  width: 80px;
+} 
+.school
+{
+  position: absolute;
+  top:38%;
+  left:22%;
+  display: block;
+  padding: 5px;
+  height: 170px;
+  width: 140px;
+}
+.grocery
+{
+  position: absolute;
+  top:1%;
+  left:26%;
+  display: block;
+  padding: 5px;
+  height: 100px;
+  width: 124px;
+}
+.bank
+{
+  position: absolute;
+  top:22%;
+  left:39%;
+  display: block;
+  padding: 5px;
+  height: 110px;
+  width: 120px;
+}
+.office
+{
+  position: absolute;
+  top:53%;
+  left:63%;
+  display: block;
+  padding: 5px;
+  height: 90px;
+  width: 200px;
+}
+.restaurant
+{
+  position: absolute;
+  top:75%;
+  left:51%;
+  display: block;
+  padding: 5px;
+  height: 82px;
+  width: 100px;
+}
+.movie
+{
+  position: absolute;
+  top:88%;
+  left:57%;
+  display: block;
+  padding: 5px;
+  height: 70px;
+  width: 82px;
+}
+
+
+
+body, html
+{
+  height: 100%;
+}
+
+
+
+#avatar{
+   padding: 0;
+   z-index: 10;
+   position: absolute;
+   left: 89%;
+   top: 70%;
+}
+svg{
+    display: block;
+    height: 30vh;
+    margin: auto;
+}
+#coins{
+    position: absolute;
+    left: 74%;
+    top: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+#coins img{
+    display: inline-block;
+    height: 8vh;
+    width: auto;
+    grid-column: 1/2;
+}
+#coins p{
+    margin-top: 1.5vh;
+    margin-left: 0.1vw;
+    font-size: 5.5vh;
+    color: #fff;
+    display: inline-block;
+    grid-column: 2/3;
+}
+#health{
+    position: absolute;
+    left: 74%;
+    top: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+#health img{
+    display: inline-block;
+    height: 8vh;
+    width: auto;
+    grid-column: 1/2;
+}
+#health p{
+    margin-top: 1.5vh;
+    margin-left: 1.2vw;
+    font-size: 5.5vh;
+    color: #fff;
+    display: inline-block;
+    grid-column: 2/3;
+}
+#month_label{
+   position: absolute;
+   left: 75%;
+   top: 90%;
+}
+#month_label p{
+    font-size: 3vh;
+    color: #fff;
+}
+#next{
+    position: absolute;
+    left: 82%;
+    top: 92%;
+}
+#next button{
+    height: 4.5vh;
+    width: 5vw;
+    font-size: 3vh;
+}

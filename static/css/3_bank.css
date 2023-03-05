@@ -1,0 +1,41 @@
+body{
+    background-color: #47607D;
+}
+h1,h2,h3{
+    color: #D2E8F5;
+}
+#inner{
+    background-color: #47607D;
+}
+#stocks-box{
+    grid-column: 3/11;
+    background-color: #097969;
+}
+#save-box{
+    grid-column: 12/20;
+    background-color: #097969;
+}
+#withdraw-box{
+    grid-column: 21/29;
+    background-color: #097969;
+}
+#savings-label{
+    position: absolute;
+    top: 20%;
+    left: 44%;
+    display: block;
+    font-size: 5vh;
+    color: #D2E8F5;
+}
+.box{
+    grid-row: 6/16;
+    border: 5px solid #68e1b4;
+}
+.box:hover{
+    box-shadow: 0 0 20px #ffd700;
+}
+.box-img{
+    height: 45vh;
+    width: auto;
+    margin-top: 12px;
+}
