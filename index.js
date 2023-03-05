@@ -16,6 +16,16 @@ var path = require('path');
 console.log(__dirname);
 app.use(express.static(path.join(__dirname,'static')));
 
+//cookies
+var cookieSession = require('cookie-session');
+app.set('trust proxy', 1);
+app.use(cookieSession({
+    name: 'encr',
+    keys: ['tAr3]DhKVtV+md?e', 'D3w8ATmew;7^B2y', 'f^hw8,g-K;duS:L:']
+}));
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 // -------------- mysql initialization -------------- //
 var sql_params = {
   connectionLimit : 10,
@@ -30,9 +40,20 @@ var pool  = mysql.createPool(sql_params);
 app.locals.pool = pool;
 
 // Other endpoint handlers 
-app.get('/', function(req, res){
-    
-});
+const login = require('./routes/1_login_route.js');
+app.use(login);
+
+const menu = require('./routes/2_menu_route.js');
+app.use(menu);
+
+const map = require('./routes/3_map_route.js');
+app.use(map);
+
+const budget = require('./routes/4_budget_route.js');
+app.use(budget);
+
+const bank = require('./routes/3_bank_route.js');
+app.use(bank);
 
 // Listener
 var listener = app.listen(process.env.PORT || 8080, process.env.HOST || "0.0.0.0", function() {
