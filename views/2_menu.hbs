@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/2_menu.css">
+</head><br>
+<body>
+    <div id="avatar">
+        {{> avatar skin=skin-color shirt=shirt-color pants=pants-color shoes=shoes-color}}
+    </div>
+    <div id="personalize">
+        <p>Color: </p>
+        <input id="color-input" type="color">
+        <button onclick="saveAvatar()">Save</button>
+    </div>
+    <div id="stats">
+        <div id="money-div">
+            <img src="./img/coin_icon.png" />
+            <p>Coins: {{profile.coins}}</p>
+        </div>
+        <div id="health-div">
+            <img src="./img/health_icon.png" />
+            <p>Health: {{profile.health}}</p>
+        </div>
+    </div>
+    <div id="map" onclick="goToMap()">
+        <img src="./img/map_icon.png" />
+        <p>Go To Map</p>
+    </div>
+    <div id="budgeting" onclick="goToBudget()">
+        <img src="./img/budget_icon.png" />
+        <p>Open Budgeting Tool</p>
+    </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/2_menu.js"></script>
+</body>
+</html>

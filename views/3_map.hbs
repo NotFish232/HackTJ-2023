@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Profile</title>
+  	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/3_map.css">
+</head>
+
+<body>
+
+    <div class="background">
+    </div>
+    
+    <div id="avatar">
+        {{> avatar skin=skin-color shirt=shirt-color pants=pants-color shoes=shoes-color}}
+    </div>
+
+    <img src="./img/House.png" class=house1 onclick="changeCoins(-1500, 76, 7, 'You paid your monthly mortgage of $1500!')">
+
+    <img src="./img/Apartment.png" class=apartment onclick="changeCoin(-2000, 76, 15, 'You paid your monthly rent of $2000!')">
+
+    <img src="./img/School.png" class=school onclick="changeCoin(-400, 48, 23, 'You paid your monthly student debt of $400!')">
+
+    <img src="./img/Store.png" class=grocery onclick="changeCoin(-300, 2, 31, 'You bought monthly groceries for $300!')">
+
+    <img src="./img/Bank.png" class=bank onclick="openBank(25, 43)">
+
+    <img src="./img/Office.png" class=office onclick="changeCoin(5000, 55, 66, 'You received your monthly salary of $5000!')">
+    
+    <img src="./img/Restaurant.png" class=restaurant onclick="changeCoin(-50, 76, 49, 'You ate out for $50!')">
+
+    <img src="./img/Theatre.png" class=movie onclick="changeCoin(-10, 92, 57, 'You went to the movies for $10!')">
+    
+    <div id="coins">
+        <img src="./img/coin_icon.png" />
+        <p id="coins_label">{{profile.coins}}</p>
+    </div>
+    <div id="health">
+        <img src="./img/health_icon.png" />
+        <p id="health_label">{{profile.health}}</p>
+    </div>
+    
+    <div id="month_label">
+        <p id="month_text">Month: <span id="month_span">{{profile.month}}</span></p>
+    </div>
+    <div id="next">
+        <button onclick="incrementMonth()">Next</button>
+    </div>
+    <p id="hidden-val">{{profile.hasHouse}}</p>
+    <p id="hidden-savings">{{profile.stocks}}</p>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/3_map.js"></script>
+</body>
+
+</html>
