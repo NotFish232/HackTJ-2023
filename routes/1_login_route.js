@@ -1,12 +1,11 @@
-
 var express = require('express');
 const router = express.Router();
 
 router.get('/', function(req, res){
-    res.render('0_homepage', {'func': "show_login()", 'message': 'Have an account? Log in instead!'});
+    res.render('1_homepage', {'func': "show_login()", 'message': 'Have an account? Log in instead!'});
 });
 router.get('/login-box', function(req, res){
-    res.render('0_login_box');
+    res.render('1_login_box');
 });
 router.get('/signup', function(req, res){
     email = req.query.username;
@@ -14,14 +13,14 @@ router.get('/signup', function(req, res){
     username = "hello";
     var sql="CALL addUser(?,?,?);";
     console.log("Calling add user.");
-    pool.query(sql, [username, email, password], function(error, results, fields){
+    res.app.locals.pool.query(sql, [username, email, password], function(error, results, fields){
         console.log(results);
         if(results!==undefined && results[0]!==undefined){
             req.session.profile = results[0][0];
             res.redirect('./menu')
         }
         else{
-            res.render('0_homepage', {'func': "show_login()", 'message': "There is an account associated with this username. Log in?"});
+            res.render('1_homepage', {'func': "show_login()", 'message': "There is an account associated with this username. Log in?"});
         }
     });
 });
@@ -29,8 +28,8 @@ router.get('/login', function(req, res, next){
     const {email, password} = req.query;
     console.log(email);
     var sql="SELECT * FROM users WHERE email = ?;";
-    pool.query(sql, [email], function(error, results, fields){
-        if(results!==undefined && results[0]!==undefined){
+    res.app.locals.pool.query(sql, [email], function(error, results, fields){
+        if(results!==undefined && results[0] !==undefined){
             console.log("HERE");
             console.log(results);
             req.session.profile = results[0];
@@ -38,24 +37,24 @@ router.get('/login', function(req, res, next){
             next();
         }
         else{
-            res.render('0_homepage', {'func': "show_signup()", 'message': "This email does not exist. Create an account?"});
+            res.render('1_homepage', {'func': "show_signup()", 'message': "This email does not exist. Create an account?"});
             return;
         }
     });
 },
 function(req, res, next){
     var sql="SELECT password FROM users WHERE userId=?;";
-    pool.query(sql, [req.session.profile.userId], function(error, results, fields){
+    res.app.locals.pool.query(sql, [req.session.profile.userId], function(error, results, fields){
         if(results[0].password==res.locals.password){
             res.redirect('./menu');
         }
         else{
-            res.render('0_homepage', {'func': "show_login()", 'message': "Password is incorrect. Try again?"});
+            res.render('1_homepage', {'func': "show_login()", 'message': "Password is incorrect. Try again?"});
         }
     });
 });
 router.get('/signup-box', function(req, res){
-    res.render('0_signup_box');
+    res.render('1_signup_box');
 });
 
 module.exports = router;
